@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++.exe build active file",
+      "command": "g++",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.exe",
+        "-g",
+        "-Wall",
+        "-static-libgcc",
+      ],
+      "options": {
+        "cwd": "C:/mingw-w64/mingw32/bin"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "g++ build & run active file",
+      "command": "g++",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.exe",
+      ],
+      "options": {
+        "cwd": "C:/mingw-w64/mingw32/bin"
+      }
+    }
+  ]
+}
