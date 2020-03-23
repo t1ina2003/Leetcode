@@ -14,22 +14,15 @@
 int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 {
     // brute method
-    for (int i = 0; i < numsSize - 1; i++)
+    int *ret = (int *)malloc(sizeof(int) * 2);
+    for (ret[0] = 0; ret[0] < numsSize - 1; ret[0]++)
     {
-        for (int j = i + 1; j < numsSize; j++)
+        for (ret[1] = ret[0] + 1; ret[1] < numsSize; ret[1]++)
         {
-            if (nums[i] + nums[j] == target)
+            if (ret[0] + ret[1] == target)
             {
-                int *result = (int *)malloc(sizeof(int) * 2);
-                if (result == NULL)
-                {
-                    *returnSize = 0;
-                    return NULL;
-                }
-                result[0] = i;
-                result[1] = j;
                 *returnSize = 2;
-                return result;
+                return ret;
             }
         }
     }
