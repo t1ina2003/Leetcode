@@ -13,6 +13,7 @@
  */
 int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 {
+    // hash map method.
     int list[numsSize], result[2];
     for (int i = 0; i < numsSize; i++)
     {
