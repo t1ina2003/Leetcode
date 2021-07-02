@@ -7,9 +7,8 @@
 # @lc code=start
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
-        list = []
-        for i, v in enumerate(nums):
-            list.append(sum(nums[0:i+1]))
-        return list
+        for i in range(1,len(nums)):
+            nums[i] = nums[i-1] + nums[i]
+        return nums
 # @lc code=end
 
