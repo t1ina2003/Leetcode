@@ -8,15 +8,17 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         # init var
-        result = []
+        map = {}
         numsLength = len(nums)
-        # check each position in nums
+        # sort nums
+        sortNums = sorted(nums)
+        # record sorted position (which happened to be numbers)
         for i in range(0,numsLength):
-            count = 0
-            for j in range(0,numsLength):
-                if nums[j]<nums[i]:
-                    count += 1
-            result.append(count)
-        return result
+            if sortNums[i] not in map:
+                map[sortNums[i]] = i
+        # rewrite nums according to map.
+        for j in range(0,numsLength):
+            nums[j] = map[nums[j]]
+        return nums
 # @lc code=end
 
